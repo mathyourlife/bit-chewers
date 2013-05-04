@@ -1,0 +1,50 @@
+May 03 19:15:13 euclid_norm postfix/qmgr[27432]: 71ABD146070: removed
+May 03 19:15:13 euclid_norm postfix/qmgr[27432]: 95E9214608F: from=<304@dddd.net>, size=41685, nrcpt=1 (queue active)
+May 03 19:15:13 euclid_norm postfix/smtpd[3068]: disconnect from unknown[11.12.13.14]
+May 03 19:15:14 euclid_norm postfix/smtp[2369]: EB4D2146076: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, status=sent (250 2.6.0 message received)
+May 03 19:15:14 euclid_norm postfix/qmgr[27432]: EB4D2146076: removed
+May 03 19:15:14 euclid_norm postfix/smtpd[3075]: disconnect from unknown[11.12.13.14]
+May 03 19:15:14 euclid_norm postfix/cleanup[2985]: 05CDC146096: message-id=<3.1415926>
+May 03 19:15:15 euclid_norm postfix/smtp[2771]: 95E9214608F: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, status=sent (250 2.6.0 message received)
+May 03 19:15:15 euclid_norm postfix/qmgr[27432]: 95E9214608F: removed
+May 03 19:15:15 euclid_norm postfix/cleanup[2895]: 04E2D146070: message-id=<3.1415926>
+May 03 19:15:15 euclid_norm postfix/qmgr[27432]: D88FA146085: from=<123@dddd.net>, size=9261, nrcpt=1 (queue active)
+May 03 19:15:16 euclid_norm postfix/smtp[2328]: 0AD8314606F: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, delay=1, status=sent (250 2.6.0 message received)
+May 03 19:15:16 euclid_norm postfix/qmgr[27432]: 0AD8314606F: removed
+May 03 19:15:16 euclid_norm postfix/smtp[1758]: 1EB8C146078: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, status=sent (250 2.6.0 message received)
+May 03 19:15:17 euclid_norm postfix/qmgr[27432]: 1EB8C146078: removed
+May 03 19:15:17 euclid_norm postfix/smtp[2797]: 3FB73146081: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, status=sent (250 2.6.0 message received)
+May 03 19:15:17 euclid_norm postfix/qmgr[27432]: 3FB73146081: removed
+May 03 19:15:17 euclid_norm postfix/smtpd[2977]: connect from unknown[11.12.13.14]
+May 03 19:15:17 euclid_norm postfix/cleanup[3067]: 103B514606F: message-id=<3.1415926>
+May 03 19:15:18 euclid_norm postfix/cleanup[3003]: 0F6B5146076: message-id=<3.1415926>
+May 03 19:15:18 euclid_norm postfix/smtpd[3052]: connect from unknown[11.12.13.14]
+May 03 19:15:18 euclid_norm postfix/cleanup[2898]: D31C5146071: message-id=<3.1415926>
+May 03 19:15:18 euclid_norm postfix/cleanup[3004]: 1119E14608F: message-id=<3.1415926>
+May 03 19:15:18 euclid_norm postfix/smtp[2411]: 33BFD146072: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, status=sent (250 2.6.0 message received)
+May 03 19:15:19 euclid_norm postfix/qmgr[27432]: 33BFD146072: removed
+May 03 19:15:19 euclid_norm postfix/smtp[1672]: D88FA146085: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, status=sent (250 2.6.0 message received)
+May 03 19:15:19 euclid_norm postfix/qmgr[27432]: D88FA146085: removed
+May 03 19:15:19 euclid_norm postfix/smtp[1674]: 3622614607C: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, status=sent (250 2.6.0 message received)
+May 03 19:15:19 euclid_norm postfix/qmgr[27432]: 3622614607C: removed
+May 03 19:15:20 euclid_norm postfix/cleanup[2999]: 20934146072: message-id=<3.1415926>
+May 03 19:15:20 euclid_norm postfix/cleanup[2900]: ECDF714608C: message-id=<3.1415926>
+May 03 19:15:20 euclid_norm postfix/smtp[2325]: E2CAD1460B2: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, status=sent (250 2.6.0 message received)
+May 03 19:15:21 euclid_norm postfix/cleanup[2987]: 21071146078: message-id=<3.1415926>
+May 03 19:15:21 euclid_norm postfix/qmgr[27432]: E2CAD1460B2: removed
+May 03 19:15:21 euclid_norm postfix/qmgr[27432]: 05CDC146096: from=<44@aaaa.com>, size=80506, nrcpt=1 (queue active)
+May 03 19:15:21 euclid_norm postfix/qmgr[27432]: D31C5146071: from=<11@bbbb.com>, size=15837, nrcpt=1 (queue active)
+May 03 19:15:22 euclid_norm postfix/qmgr[27432]: 253F714609D: from=<25@dddd.net>, size=46661, nrcpt=1 (queue active)
+May 03 19:15:22 euclid_norm postfix/qmgr[27432]: 103B514606F: from=<920@dddd.net>, size=88939, nrcpt=1 (queue active)
+May 03 19:15:22 euclid_norm postfix/qmgr[27432]: 0F6B5146076: from=<294@eeee.io>, size=21872, nrcpt=1 (queue active)
+May 03 19:15:22 euclid_norm postfix/smtpd[3052]: disconnect from unknown[11.12.13.14]
+May 03 19:15:23 euclid_norm postfix/smtpd[3002]: connect from unknown[11.12.13.14]
+May 03 19:15:23 euclid_norm postfix/qmgr[27432]: 04E2D146070: from=<531@ffff.io>, size=21918, nrcpt=1 (queue active)
+May 03 19:15:23 euclid_norm postfix/qmgr[27432]: 1119E14608F: from=<664@aaaa.com>, size=11704, nrcpt=1 (queue active)
+May 03 19:15:23 euclid_norm postfix/qmgr[27432]: 20934146072: from=<426@bbbb.com>, size=12450, nrcpt=1 (queue active)
+May 03 19:15:24 euclid_norm postfix/smtpd[3053]: disconnect from unknown[11.12.13.14]
+May 03 19:15:24 euclid_norm postfix/smtpd[3059]: disconnect from unknown[11.12.13.14]
+May 03 19:15:24 euclid_norm postfix/cleanup[3047]: 2A96B146081: message-id=<3.1415926>
+May 03 19:15:24 euclid_norm postfix/smtpd[3049]: warning: network_biopair_interop: error reading 5 bytes from the network: Connection reset by peer
+May 03 19:15:24 euclid_norm postfix/smtpd[3049]: disconnect from unknown[11.12.13.14]
+May 03 19:15:25 euclid_norm postfix/smtp[2379]: 05CDC146096: to=<pluto@planetoid.com>, relay=7.8.9.10[11.12.13.14]:25, status=sent (250 2.6.0 message received)
