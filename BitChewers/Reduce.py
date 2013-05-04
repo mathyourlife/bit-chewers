@@ -25,12 +25,6 @@ class Count(Map):
         Reducing function that increments the needed key
         """
         self.counts[data[self.key]] += 1
-        return
-        return {
-            'senders': senders,
-            'sizes': sizes,
-            'bigmsgs': bigmsgs
-        }
 
 class Max(Map):
     """
