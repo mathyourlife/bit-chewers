@@ -15,22 +15,12 @@ cat -n 100 mail.info  | ./top_senders.py
 cat -n 100 mail.info  | python3 top_senders.py
 ```
 
-##Sample top_sender.py
+##Example top_sender.py
 
 Here's a call to the sample file provided and the output.
 
 ```bash
 $ cat mail.log | python3 top_senders.py 
-{'domain': 'dddd.net', 'local': '304', 'size': 41685}
-{'domain': 'dddd.net', 'local': '123', 'size': 9261}
-{'domain': 'aaaa.com', 'local': '44', 'size': 80506}
-{'domain': 'bbbb.com', 'local': '11', 'size': 15837}
-{'domain': 'dddd.net', 'local': '25', 'size': 46661}
-{'domain': 'dddd.net', 'local': '920', 'size': 88939}
-{'domain': 'eeee.io', 'local': '294', 'size': 21872}
-{'domain': 'ffff.io', 'local': '531', 'size': 21918}
-{'domain': 'aaaa.com', 'local': '664', 'size': 11704}
-{'domain': 'bbbb.com', 'local': '426', 'size': 12450}
 
 Message Counts
 4	dddd.net
@@ -54,17 +44,16 @@ Max Message Size
 15837	bbbb.com
 ```
 
-##Source
-```python
+##Source top_senders.py
+```python3
+#!/usr/bin/env python3
+
 from BitChewers.Pipe import PipeREGEX
 from BitChewers import Map, Reduce
 
-# Cast the size value from a string to an int
-cast = Map.Cast({'size': 'int'})
-# This is the reducer tracking stats on the size value from the regex match
 send_stats = Reduce.BasicStats(label='domain', value='size')
+cast = Map.Cast({'size': 'int'})
 
-# Setup the pipe
 kw = {
     'regex': r'from=<(?P<local>[A-Za-z-=0-9\._]*)@(?P<domain>[A-Za-z-=0-9\._]*)>(, size=(?P<size>\d*))?',
     'maps': [
@@ -76,8 +65,79 @@ kw = {
 }
 pipe_lines = PipeREGEX(**kw)
 
-# Pull in lines.  Nothing is needed inside the loop
 for data in pipe_lines:
-# print(data)
+    print(data)
     pass
+
+def show_top(n, data):
+    for s in sorted(data.items(), key=lambda x: x[1], reverse=True)[:n]:
+        print('{}\t{}'.format(s[1], s[0]))
+
+n = 5
+
+print('\nMessage Counts')
+show_top(n, send_stats.stats['count'])
+
+print('\nAvg Message Size')
+show_top(n, send_stats.stats['avg'])
+
+print('\nMax Message Size')
+show_top(n, send_stats.stats['max'])
+```
+
+##Example send_rate.py
+
+Use the mail.log file to find who's pushing the most through the system
+
+```bash
+$ cat mail.log | ./send_rate.py 
+From Domain    Throughput (kB/s)
+bbbb.com	13.81201171875
+aaaa.com	45.0244140625
+dddd.net	20.241536458333332
+```
+
+##Source send_rate.py
+
+```python3
+#!/usr/bin/env python3
+
+from BitChewers.Pipe import PipeREGEX
+from BitChewers import Map, Reduce
+import time
+
+cast = Map.Cast({
+    'size': 'int',
+    'timestamp': 'date %b %d %H:%M:%S',
+})
+
+size_stats = Reduce.BasicStats(label='domain', value='size')
+time_stats = Reduce.Extremes(label='domain', value='timestamp')
+
+kw = {
+    'regex': r'^(?P<timestamp>\w+ \d+ \d{2}:\d{2}:\d{2}) .+ from=<(?P<local>[A-Za-z-=0-9\._]*)@(?P<domain>[A-Za-z-=0-9\._]*)>, size=(?P<size>\d*),',
+    'ignore_case': True,
+    'maps': [
+        cast
+    ],
+    'reducers': [
+        size_stats,
+        time_stats,
+    ]
+}
+pipe_lines = PipeREGEX(**kw)
+
+for data in pipe_lines:
+    #print(data)
+    pass
+
+print('From Domain\tThroughput (kB/s)')
+for k, n in size_stats.stats['count'].items():
+    max = time_stats.stats['max'][k]
+    min = time_stats.stats['min'][k]
+    try:
+        rate = size_stats.stats['sum'][k] / 1024 / (max - min)
+        print('{}\t{}'.format(k, rate))
+    except ZeroDivisionError:
+        pass
 ```
