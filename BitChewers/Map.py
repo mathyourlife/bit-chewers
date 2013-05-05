@@ -2,7 +2,9 @@
 Tools to  map input object to new output representations.
 """
 
+import datetime
 import time
+
 
 class Cast:
     """
@@ -26,6 +28,6 @@ class Cast:
             if type == 'int':
                 data[0][k] = int(data[0][k])
             elif type[0:4] == 'date':
-                data[0][k] = time.strptime(data[0][k], type[5:])
+                data[0][k] = time.mktime(datetime.datetime.strptime(data[0][k], type[5:]).timetuple())
             else:
                 raise NotImplementedError

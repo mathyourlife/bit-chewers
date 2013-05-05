@@ -71,7 +71,7 @@ class CastTest(unittest.TestCase):
         obj.map(data)
 
         self.assertEqual([{
-            'timestamp': time.strptime("05 May 13", "%d %b %y")
+            'timestamp': 1367726400.0
         }], data)
 
     def test_not_implemented(self):

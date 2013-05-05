@@ -73,6 +73,37 @@ class Max(BaseReduce):
             self.max[data[self.label]] = data[self.value]
 
 
+class Extremes(BaseReduce):
+    """
+    Track min and max for the groups.
+    """
+
+    def __init__(self, label, value):
+        self.label = label
+        self.value = value
+        self.stats = {
+            'min': {},
+            'max': {},
+        }
+
+    def reduce(self, data):
+        """
+        Reducing function to track extremes
+        """
+
+        if data[self.label] not in self.stats['min']:
+            # First instance of this label
+            self.stats['min'][data[self.label]] = data[self.value]
+            self.stats['max'][data[self.label]] = data[self.value]
+        else:
+            # Set the min
+            if data[self.value] < self.stats['min'][data[self.label]]:
+                self.stats['min'][data[self.label]] = data[self.value]
+            # Set the max
+            if data[self.value] > self.stats['max'][data[self.label]]:
+                self.stats['max'][data[self.label]] = data[self.value]
+
+
 class BasicStats(BaseReduce):
     """
     Limited stats that don't require a history to compute.
