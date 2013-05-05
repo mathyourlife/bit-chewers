@@ -10,8 +10,15 @@ path = abspath(dirname(__file__))
 
 classifiers = (
     'Development Status :: 3 - Alpha',
-    'Programming Language :: Python :: 3.3',
+    'Programming Language :: Python :: 3',
     'License :: OSI Approved :: MIT License',
+    'Operating System :: Unix',
+    'Environment :: Console',
+    'Intended Audience :: Developers',
+    'Intended Audience :: System Administrators',
+    'Topic :: Scientific/Engineering :: Information Analysis',
+    'Topic :: System :: Monitoring',
+    '
 )
 
 packages = [
@@ -25,7 +32,7 @@ required = [
 kw = {
     'name': 'BitChewers',
     'version': '0.0.1',
-    'description': 'A Python lib to turn log lines to analytics',
+    'description': 'Analytics for your command line.  Filter/Map/Reduce from stdin.',
     'long_description': open(join(path, 'README.md')).read(),
     'author': 'Daniel Couture, Carlton Stedman',
     'license': 'MIT License',
