@@ -18,7 +18,6 @@ classifiers = (
     'Intended Audience :: System Administrators',
     'Topic :: Scientific/Engineering :: Information Analysis',
     'Topic :: System :: Monitoring',
-    '
 )
 
 packages = [
