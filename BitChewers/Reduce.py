@@ -5,12 +5,14 @@ then filtered, then mapped.
 
 from collections import defaultdict
 
+
 class BaseReduce:
     def reduce(self, data):
         pass
 
     def finish(self):
         pass
+
 
 class Count(BaseReduce):
     """
@@ -25,6 +27,7 @@ class Count(BaseReduce):
         Reducing function that increments the needed key
         """
         self.counts[data[self.key]] += 1
+
 
 class Min(BaseReduce):
     """
@@ -47,6 +50,7 @@ class Min(BaseReduce):
         if data[self.value] < self.min[data[self.label]]:
             self.min[data[self.label]] = data[self.value]
 
+
 class Max(BaseReduce):
     """
     Determine the max value encoutered grouped by the label field.
@@ -67,6 +71,7 @@ class Max(BaseReduce):
 
         if data[self.value] > self.max[data[self.label]]:
             self.max[data[self.label]] = data[self.value]
+
 
 class BasicStats(BaseReduce):
     """

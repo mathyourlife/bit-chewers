@@ -135,7 +135,6 @@ class PipeLines:
             r.finish()
 
 
-
 class PipeJSON(PipeLines):
     """
     Iterator from stdin pipe that yields dict from valid json encoded lines.
@@ -169,7 +168,8 @@ class PipeREGEX(PipeLines):
     yielded as tuples of matched data.
     """
 
-    def __init__(self, regex, ignore_case=False, filters=None, maps=None, reducers=None):
+    def __init__(self, regex, ignore_case=False, filters=None,
+                 maps=None, reducers=None):
         """
         Set up the regex to test against all lines being piped in.
 

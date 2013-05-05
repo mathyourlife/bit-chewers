@@ -2,6 +2,7 @@ import unittest
 
 from BitChewers import Map
 
+
 class CastTest(unittest.TestCase):
 
     def test_basic(self):
@@ -36,7 +37,6 @@ class CastTest(unittest.TestCase):
             'time': 567,
             'value': 3
         }], data)
-
 
     def test_extra_keys(self):
         cast = {
