@@ -77,10 +77,11 @@ class BasicStats(BaseReduce):
         self.label = label
         self.value = value
         self.stats = {
-            'max': defaultdict(int),
+            'min': {},
+            'max': {},
             'count': defaultdict(int),
-            'sum': defaultdict(int),
-            'avg': defaultdict(int),
+            'sum': {},
+            'avg': {},
         }
 
     def reduce(self, data):
@@ -91,12 +92,21 @@ class BasicStats(BaseReduce):
         # Increment the count
         self.stats['count'][data[self.label]] += 1
 
-        # Add to Running total
-        self.stats['sum'][data[self.label]] += data[self.value]
-
-        # Set the max
-        if data[self.value] > self.stats['max'][data[self.label]]:
+        if data[self.label] not in self.stats['min']:
+            # First instance of this label
+            self.stats['min'][data[self.label]] = data[self.value]
             self.stats['max'][data[self.label]] = data[self.value]
+            self.stats['sum'][data[self.label]] = data[self.value]
+        else:
+            # Add to Running total
+            self.stats['sum'][data[self.label]] += data[self.value]
+
+            # Set the min
+            if data[self.value] < self.stats['min'][data[self.label]]:
+                self.stats['min'][data[self.label]] = data[self.value]
+            # Set the max
+            if data[self.value] > self.stats['max'][data[self.label]]:
+                self.stats['max'][data[self.label]] = data[self.value]
 
     def finish(self):
         """
