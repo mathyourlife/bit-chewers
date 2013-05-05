@@ -1,7 +1,7 @@
 import unittest
 
 from BitChewers import Map
-
+import time
 
 class CastTest(unittest.TestCase):
 
@@ -55,6 +55,23 @@ class CastTest(unittest.TestCase):
         self.assertEqual([{
             'time': 567,
             'value': 'yes'
+        }], data)
+
+    def test_time(self):
+        cast = {
+            'timestamp': 'date %d %b %y'
+        }
+
+        obj = Map.Cast(cast)
+
+        data = [{
+            'timestamp': '05 May 13'
+        }]
+
+        obj.map(data)
+
+        self.assertEqual([{
+            'timestamp': time.strptime("05 May 13", "%d %b %y")
         }], data)
 
     def test_not_implemented(self):
