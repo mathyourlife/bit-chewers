@@ -17,6 +17,7 @@ for line in p:
 import sys
 import json
 import re
+import csv
 
 
 class PipeLines:
@@ -158,6 +159,9 @@ class PipeJSON(PipeLines):
         if not self.filter(line):
             return False
 
+        self.map(line)
+        self.reduce(line)
+
         return True
 
 
@@ -200,6 +204,47 @@ class PipeREGEX(PipeLines):
         if m is None:
             return False
         line[0] = m.groupdict()
+
+        if not self.filter(line):
+            return False
+
+        self.map(line)
+        self.reduce(line)
+
+        return True
+
+
+class PipeCSV(PipeLines):
+    """
+    Iterator from stdin pipe that yields tuples.
+    Line passed in as a list so it can be mutated.  Lines are
+    yielded as tuples of matched data.
+    """
+
+    labels = None
+
+    def validate(self, line):
+        """
+        Determine if the input string is valid to pass on.  Inital
+        validation for raw input followed by optional filtering supplied
+        by the user.
+
+        :return: True if okay, False if skip
+        :rtype: bool
+        """
+
+        csv_parser = csv.reader(line)
+        try:
+            for parsed_line in csv_parser:
+                break
+        except UnicodeDecodeError:
+            return False
+
+        if self.labels is None:
+            self.labels = parsed_line
+            return False
+
+        line[0] = dict(zip(self.labels, parsed_line))
 
         if not self.filter(line):
             return False
