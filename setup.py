@@ -22,7 +22,6 @@ classifiers = (
 
 packages = [
     'BitChewers',
-    'BitChewers.JSON',
 ]
 
 required = [

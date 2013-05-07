@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from BitChewers.Pipe import PipeJSON
-from BitChewers.JSON import Filter
+from BitChewers import Filter
 
 kw = {
     'filters': [

@@ -30,7 +30,7 @@ $ head -n 400 json_lines.txt | python3 summary.py
 #!/usr/bin/env python3
 
 from BitChewers.Pipe import PipeJSON
-from BitChewers.JSON import Filter
+from BitChewers import Filter
 
 kw = {
     'filters': [

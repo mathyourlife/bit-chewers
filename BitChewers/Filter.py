@@ -1,5 +1,5 @@
 """
-Tools to filter our logs containing json objects.
+Tools to filter our input lines.
 """
 
 
