@@ -1,0 +1,50 @@
+,user_id,movie_id,rating,timestamp,gender,age,occupation,zip,title,genres,for_testing
+593263,3562,3798,4,967332344,F,25,6,32812,What Lies Beneath (2000),Thriller,False
+235597,1051,3793,4,974958593,F,25,0,60513,X-Men (2000),Action|Sci-Fi,False
+219003,3727,2366,3,966309522,M,35,7,74401,King Kong (1933),Action|Adventure|Horror,False
+685090,4666,1094,3,963843918,M,35,1,53704,"Crying Game, The (1992)",Drama|Romance|War,False
+312377,3261,1095,4,968251750,M,45,20,87505,Glengarry Glen Ross (1992),Drama,False
+916102,1139,3317,5,987819143,M,25,1,93420-2852,Wonder Boys (2000),Comedy|Drama,False
+757805,2507,3707,2,974082793,M,25,4,94107,Nine 1/2 Weeks (1986),Drama,False
+216517,2664,1036,5,973455698,M,35,7,52402,Die Hard (1988),Action|Thriller,False
+28065,5792,527,5,958082168,M,25,17,43201,Schindler's List (1993),Drama|War,False
+284940,3395,2959,3,967487438,M,25,7,02134,Fight Club (1999),Drama,False
+677643,4213,466,4,965839559,M,35,7,63125,Hot Shots! Part Deux (1993),Action|Comedy|War,False
+241780,2550,296,4,974030424,M,50,7,37931,Pulp Fiction (1994),Crime|Drama,False
+487663,1230,3704,4,974836558,M,25,11,95125,Mad Max Beyond Thunderdome (1985),Action|Sci-Fi,False
+647317,1219,2533,2,1003845122,M,25,7,12206,Escape from the Planet of the Apes (1971),Action|Sci-Fi,False
+8747,4510,1287,3,964990792,M,45,7,92503,Ben-Hur (1959),Action|Adventure|Drama,False
+8203,5992,1197,5,956865152,F,18,4,21046,"Princess Bride, The (1987)",Action|Adventure|Comedy|Romance,False
+926550,4458,2448,2,966200199,F,25,4,15701-2017,Virus (1999),Horror|Sci-Fi,False
+637336,5675,293,4,958682607,M,35,14,30030,"Professional, The (a.k.a. Leon: The Professional) (1994)",Crime|Drama|Romance|Thriller,False
+900406,5854,2793,4,958273894,M,45,7,33135,"American Werewolf in Paris, An (1997)",Comedy|Horror,False
+612863,4532,1645,3,966029633,M,25,7,10025,"Devil's Advocate, The (1997)",Crime|Horror|Mystery|Thriller,False
+662005,4510,2085,4,964980393,M,45,7,92503,101 Dalmatians (1961),Animation|Children's,False
+773298,3704,2313,4,967160696,F,35,0,04255,"Elephant Man, The (1980)",Drama,False
+707370,980,3000,5,975731496,M,25,6,92014,"Princess Mononoke, The (Mononoke Hime) (1997)",Action|Adventure|Animation,False
+994951,3618,3368,3,966862995,M,56,17,22657,"Big Country, The (1958)",Romance|Western,False
+30581,4658,1097,4,963878831,M,25,4,99163,E.T. the Extra-Terrestrial (1982),Children's|Drama|Fantasy|Sci-Fi,False
+538648,5339,2021,3,960713073,M,18,17,60193,Dune (1984),Fantasy|Sci-Fi,False
+799606,5585,846,5,959489268,M,25,4,10016,Flirt (1995),Drama,False
+821550,1191,1946,5,974851371,F,35,0,98117,Marty (1955),Drama|Romance,False
+309693,4248,24,4,965308542,M,25,4,26508,Powder (1995),Drama|Sci-Fi,False
+388758,2818,1673,4,972669759,M,25,12,55106,Boogie Nights (1997),Drama,False
+889315,3626,2328,5,966617945,M,25,17,75075,Vampires (1998),Horror,False
+893304,1658,1816,4,974712426,F,35,6,94214,Two Girls and a Guy (1997),Comedy|Drama,False
+611811,960,1644,1,975126575,M,1,10,45244,I Know What You Did Last Summer (1997),Horror|Mystery|Thriller,False
+388274,755,1673,4,997812399,F,35,0,94002,Boogie Nights (1997),Drama,False
+639937,4506,2288,3,964983111,M,50,16,29464,"Thing, The (1982)",Action|Horror|Sci-Fi|Thriller,False
+508838,1680,2000,3,974712635,M,25,20,95380,Lethal Weapon (1987),Action|Comedy|Crime|Drama,False
+420837,4079,3359,5,990555538,M,35,17,26505,Breaking Away (1979),Drama,False
+240194,2298,2700,3,974499552,M,35,17,77584,"South Park: Bigger, Longer and Uncut (1999)",Animation|Comedy,False
+153029,272,163,4,976697036,M,18,0,80302,Desperado (1995),Action|Romance|Thriller,False
+652438,5026,2985,4,962582855,M,25,17,92584,Robocop (1987),Action|Crime|Sci-Fi,False
+522998,1272,3247,2,974816492,M,18,20,49506,Sister Act (1992),Comedy|Crime,False
+953961,4411,3497,5,970367534,M,18,4,92122,Max Dugan Returns (1983),Comedy,False
+551573,2327,1676,4,974432820,M,18,10,48169,Starship Troopers (1997),Action|Adventure|Sci-Fi|War,False
+46886,284,260,5,976570325,M,25,12,91910,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Fantasy|Sci-Fi,False
+650825,1647,2116,4,974712694,M,18,18,98118,"Lord of the Rings, The (1978)",Adventure|Animation|Children's|Sci-Fi,False
+307358,3792,2759,3,967123417,M,25,6,68108,Dick (1999),Comedy,False
+162980,3888,920,4,966179373,M,45,17,02067,Gone with the Wind (1939),Drama|Romance|War,False
+157758,3808,380,3,965963898,M,25,7,60010,True Lies (1994),Action|Adventure|Comedy|Romance,False
+462797,4094,3039,5,966223263,M,25,17,49017,Trading Places (1983),Comedy,False
