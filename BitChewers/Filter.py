@@ -3,7 +3,7 @@ Tools to filter our input lines.
 """
 
 
-class keys_exist:
+class KeysExist:
     """
     Filter out values that do not contain the correct keys
     """

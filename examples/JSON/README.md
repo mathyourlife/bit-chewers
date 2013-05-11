@@ -34,7 +34,7 @@ from BitChewers import Filter
 
 kw = {
     'filters': [
-        Filter.keys_exist(['Newton Meters', 'Probability'])
+        Filter.KeysExist(['Newton Meters', 'Probability'])
     ],
 }
 pipe_json = PipeJSON(**kw)
