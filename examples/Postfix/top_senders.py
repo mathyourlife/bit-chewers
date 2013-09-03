@@ -18,7 +18,7 @@ kw = {
 pipe_lines = PipeREGEX(**kw)
 
 for data in pipe_lines:
-    print(data)
+    #print(data)
     pass
 
 def show_top(n, data):

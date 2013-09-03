@@ -25,10 +25,11 @@ class PipeLines:
     Pipe standard string lines in and create an iterator
     """
 
-    def __init__(self, filters=None, maps=None, reducers=None):
+    def __init__(self, filters=None, maps=None, reducers=None, monitors=None):
         self.filters = filters
         self.maps = maps
         self.reducers = reducers
+        self.monitors = monitors
 
     def __iter__(self):
         """
@@ -124,6 +125,18 @@ class PipeLines:
         for r in self.reducers:
             r.reduce(line[0])
 
+    def monitor(self, line):
+        """
+        Run the filtered line through any reducing function defined by
+        the user
+        """
+
+        if self.monitor is None:
+            return
+
+        for r in self.monitors:
+            r.monitor(line[0])
+
     def finish_reduce(self):
         """
         End of line input.  Finish of the reducers.
@@ -161,6 +174,7 @@ class PipeJSON(PipeLines):
 
         self.map(line)
         self.reduce(line)
+        self.monitor(line)
 
         return True
 
