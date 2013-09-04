@@ -131,7 +131,7 @@ class PipeLines:
         the user
         """
 
-        if self.monitor is None:
+        if self.monitors is None:
             return
 
         for r in self.monitors:
