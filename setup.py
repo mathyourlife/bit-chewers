@@ -24,9 +24,6 @@ packages = [
     'BitChewers',
 ]
 
-required = [
-]
-
 kw = {
     'name': 'BitChewers',
     'version': '0.0.1',
@@ -37,7 +34,6 @@ kw = {
     'classifiers': classifiers,
     'packages': packages,
     'package_data': {'BitChewers': ['*.md']},
-    'install_requires': required,
 }
 
 setup(**kw)
