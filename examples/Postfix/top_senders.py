@@ -3,7 +3,7 @@
 from BitChewers.Pipe import PipeREGEX
 from BitChewers import Map, Reduce
 
-send_stats = Reduce.BasicStats(label='domain', value='size')
+send_stats = Reduce.BasicStatsGrouping(label='domain', value='size')
 cast = Map.Cast({'size': 'int'})
 
 kw = {
