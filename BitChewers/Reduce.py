@@ -6,13 +6,12 @@ then filtered, then mapped.
 from collections import defaultdict
 
 
-class BaseReduce:
+class BaseReduce(object):
     def reduce(self, data):
         pass
 
     def finish(self):
         pass
-
 
 class Count(BaseReduce):
     """
@@ -78,6 +77,36 @@ class Extremes(BaseReduce):
     Track min and max for the groups.
     """
 
+    def __init__(self, key):
+        self.key = key
+        self.stats = {
+            'min': None,
+            'max': None,
+        }
+
+    def reduce(self, data):
+        """
+        Reducing function to track extremes
+        """
+
+        if self.stats['min'] is None:
+            self.stats['min'] = data[self.key]
+            self.stats['max'] = data[self.key]
+            return
+
+        if data[self.key] < self.stats['min']:
+            self.stats['min'] = data[self.key]
+            return
+
+        if self.stats['max'] < data[self.key]:
+            self.stats['max'] = data[self.key]
+
+
+class ExtremesGrouping(BaseReduce):
+    """
+    Track min and max for the groups.
+    """
+
     def __init__(self, label, value):
         self.label = label
         self.value = value
@@ -105,6 +134,48 @@ class Extremes(BaseReduce):
 
 
 class BasicStats(BaseReduce):
+    """
+    Limited stats that don't require a history to compute.
+    """
+
+    def __init__(self, key):
+        self.key = key
+        self.stats = {
+            'min': None,
+            'max': None,
+            'count': 0,
+            'sum': 0,
+            'avg': None,
+        }
+
+    def reduce(self, data):
+        """
+        Reducing function to track basic stats
+        """
+
+        self.stats['count'] += 1
+        self.stats['sum'] += data[self.key]
+
+        if self.stats['count'] == 1:
+            self.stats['min'] = data[self.key]
+            self.stats['max'] = data[self.key]
+            self.stats['sum'] = data[self.key]
+
+        if data[self.key] < self.stats['min']:
+            self.stats['min'] = data[self.key]
+            return
+
+        if self.stats['max'] < data[self.key]:
+            self.stats['max'] = data[self.key]
+
+    def finish(self):
+        """
+        For stats that are completed at the end of the run
+        """
+        self.stats['avg'] = self.stats['sum'] / self.stats['count']
+
+
+class BasicStatsGrouping(BaseReduce):
     """
     Limited stats that don't require a history to compute.
     """

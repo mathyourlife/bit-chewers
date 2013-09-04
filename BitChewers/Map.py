@@ -2,7 +2,7 @@
 Tools to  map input object to new output representations.
 """
 
-import datetime
+import calendar
 import time
 
 
@@ -28,9 +28,10 @@ class Cast:
             if type == 'int':
                 try:
                     data[0][k] = int(data[0][k])
-                except TypeError:
+                except (TypeError, ValueError):
+                    print(data)
                     data[0][k] = 0
             elif type[0:4] == 'date':
-                data[0][k] = time.mktime(datetime.datetime.strptime(data[0][k], type[5:]).timetuple())
+                data[0][k] = calendar.timegm(time.strptime(data[0][k], type[5:]))
             else:
                 raise NotImplementedError

@@ -9,8 +9,8 @@ cast = Map.Cast({
     'timestamp': 'date %b %d %H:%M:%S',
 })
 
-size_stats = Reduce.BasicStats(label='domain', value='size')
-time_stats = Reduce.Extremes(label='domain', value='timestamp')
+size_stats = Reduce.BasicStatsGrouping(label='domain', value='size')
+time_stats = Reduce.ExtremesGrouping(label='domain', value='timestamp')
 
 kw = {
     'regex': r'^(?P<timestamp>\w+ \d+ \d{2}:\d{2}:\d{2}) .+ from=<(?P<local>[A-Za-z-=0-9\._]*)@(?P<domain>[A-Za-z-=0-9\._]*)>, size=(?P<size>\d*),',
