@@ -24,7 +24,7 @@ from BitChewers.Pipe import PipeCSV
 from BitChewers import Map, Reduce
 
 cast = Map.Cast({'rating': 'int'})
-gender_ratings = Reduce.BasicStats(label='gender', value='rating')
+gender_ratings = Reduce.BasicStatsGrouping(label='gender', value='rating')
 
 kw = {
     'maps': [cast],
